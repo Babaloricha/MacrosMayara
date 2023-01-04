@@ -26,7 +26,7 @@ TotalDivida = Planilha1.Cells(15, 2).Value
 honorarios = Planilha1.Cells(19, 8).Value
 
 
-linha = WorksheetFunction.CountA(Planilha10.Range("A:A")) + 1
+linha = WorksheetFunction.CountA(ws.Range("A:A")) + 1
 
 ws.Cells(linha, 1).Value = unidade
 ws.Cells(linha, 2).Value = nome

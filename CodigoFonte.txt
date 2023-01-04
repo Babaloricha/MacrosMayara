@@ -1,0 +1,40 @@
+Sub GravarProposta()
+'
+' Macro1 Macro
+'
+
+Dim wb As Workbook: Set wb = ThisWorkbook
+Dim ws As Worksheet
+Set ws = wb.Sheets("TESTE BASE")
+If ws Is Nothing Then
+    Exit Sub 'possible way of handing no worksheet was set
+End If
+
+Dim unidade As String
+Dim nome As String
+Dim Email As String
+Dim TotalDivida As Double
+Dim honorarios As Double
+Dim linha As Double
+
+
+
+unidade = Planilha1.Cells(2, 2).Value
+nome = Planilha1.Cells(3, 2).Value
+Email = Planilha1.Cells(4, 2).Value
+TotalDivida = Planilha1.Cells(15, 2).Value
+honorarios = Planilha1.Cells(19, 8).Value
+
+
+linha = WorksheetFunction.CountA(Planilha10.Range("A:A")) + 1
+
+ws.Cells(linha, 1).Value = unidade
+ws.Cells(linha, 2).Value = nome
+ws.Cells(linha, 3).Value = Email
+ws.Cells(linha, 4).Value = TotalDivida
+ws.Cells(linha, 5).Value = honorarios
+ws.Cells(linha, 6).Value = Date
+ws.Cells(linha, 7).Value = "Proposta Enviada"
+
+
+End Sub
